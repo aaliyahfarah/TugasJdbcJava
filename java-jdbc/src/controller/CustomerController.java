@@ -22,7 +22,7 @@ public class CustomerController {
         //customer.setId(0);
         customer.setFirstName("Aaliyah");
         customer.setLastName("Farah");
-        customer.setTelephone("092312345078");
+        customer.setTelephone("+62312345078");
         customer.setAddress("Bekasi");
 
         Boolean result = customerRepository.post(customer);
@@ -35,18 +35,17 @@ public class CustomerController {
 
     public void update(){
         Customer customer = new Customer();
-        customer.setFirstName("Aaliyha");
-        customer.setLastName("Farah");
+        customer.setFirstName("jane");
+        customer.setLastName("miller");
         customer.setTelephone("08113456780");
-        customer.setAddress("Bekasi");
-        customer.setId(9);
+        customer.setAddress("bekasi");
+        customer.setId(3);
 
         Boolean result = customerRepository.update(customer);
 
         if(result){
             System.out.println("Update data success");
         }
-
     }
 
     public void delete(){
@@ -58,7 +57,6 @@ public class CustomerController {
         if(result){
             System.out.println("Delete data success");
         }
-
     }
 
     public void getByTelephone(){

@@ -127,13 +127,13 @@ public class CustomerRepository implements ICustomerRepository{
     }
 
     @Override
-    public List<Customer> getById(Integer id) {
+    public List<Customer> getById(Integer inputId) {
         String query = "SELECT * FROM tb_m_customer WHERE id = ?";
         List<Customer> customers = new ArrayList<>();
 
         try {
             PreparedStatement getIdStatement = connection.prepareStatement(query);
-            getIdStatement.setInt(1, id);
+            getIdStatement.setInt(1, inputId);
 
             ResultSet resultSet = getIdStatement.executeQuery();
             if (resultSet.next()) {
